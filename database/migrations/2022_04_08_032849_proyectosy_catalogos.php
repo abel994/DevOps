@@ -28,6 +28,7 @@ class ProyectosyCatalogos extends Migration
         });
 
         Schema::create('proyectos', function (Blueprint $table) {
+            
             $table->id()->increments('id');
             $table->string('nombre');
             $table->string('descripcion',1000);
