@@ -77,7 +77,14 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <div class="container">
+                @if(session()->has('tipo'))
+                    <div class="alert {{ session()->get('tipo') == 'exitoso' ? 'alert-success' : 'alert'}} ">
+                        {{session()->get('mensaje')}}
+                    </div>
+                @endif
+                @yield('content')
+            </div>
         </main>
     </div>
 </body>

@@ -13,11 +13,24 @@ class Proyecto extends Model
         'descripcion',
         'slug',
         'proyecto_id',
-        'estatus_id'
+        'estatus_id',
+        'user_id'
     ];
 
     //relaciones
     public function estatus(){
         return $this->belongsTo(Estatus::class,'estatus_id');
+    }
+
+    public function usuario(){
+
+        return $this->belongsTo('App\User','user_id');
+
+    }
+
+    public function tipo(){
+
+        return $this->belongsTo(TipoProyecto::class,'proyecto_id');
+
     }
 }

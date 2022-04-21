@@ -36,4 +36,11 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //relaciones
+
+    public function proyectos(){
+        return $this->hasMany('App\Models\Proyecto','user_id');
+
+    } 
 }
